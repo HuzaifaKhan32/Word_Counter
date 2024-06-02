@@ -9,13 +9,13 @@ async function charCounter() {
     let paragraph = await inquirer.prompt([{
             name: "para",
             type: "input",
-            message: "Please, Insert a paragraph"
+            message: "Please, Insert a paragraph: "
         }]);
     // assaign a variable with name length and intiliaze with 0
     let length = 0;
     // Splitting string into an  array with spaces and with the help of split() method
     // Then, use filter method to take out the strings having no spaces
-    let splitString = paragraph.para.split(" ").map((char) => length += char.length);
+    paragraph.para.split(" ").map((char) => length += char.length);
     // assigning the filtered array length into length variable
     return length;
 }
@@ -25,7 +25,7 @@ async function wordCounter() {
     let paragraph = await inquirer.prompt([{
             name: "para",
             type: "input",
-            message: "Please, Insert a paragraph"
+            message: "Please, Insert a paragraph: "
         }]);
     // assaign a variable with name length and intiliaze with 0
     let length = 0;
@@ -46,10 +46,12 @@ while (condition) {
             message: chalk.green("Please, Select the operation")
         }]);
     if (operation.operate === "Word Counter") {
+        // Assigning wordCounter() result into variable named result
         let result = await wordCounter();
         console.log(`\n\tTotal words are: ${result}\n\t`);
     }
     else if (operation.operate === "Character Counter") {
+        // Assigning charCounter() result into variable named result
         let result = await charCounter();
         console.log(`\n\tTotal characters are: ${result}\n\t`);
     }
