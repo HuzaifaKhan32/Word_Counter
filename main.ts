@@ -20,7 +20,7 @@ async function charCounter() {
     // Splitting string into an  array with spaces and with the help of split() method
     // Then, use filter method to take out the strings having no spaces
 
-    let splitString = paragraph.para.split(" ").map((char : string) => length += char.length);
+    paragraph.para.split(" ").map((char : string) => length += char.length);
 
     // assigning the filtered array length into length variable
     return length;
